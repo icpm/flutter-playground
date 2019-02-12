@@ -4,6 +4,7 @@ class ListExample extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return new MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'my first flutter app',
       home: new Scaffold(
         appBar: new AppBar(

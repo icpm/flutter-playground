@@ -5,7 +5,7 @@ class AgeCalculator extends StatelessWidget {
   Widget build(BuildContext context) {
     return new MaterialApp(
         debugShowCheckedModeBanner: false,
-        theme: new ThemeData(primarySwatch: Colors.brown),
+        theme: new ThemeData(primarySwatch: Colors.green),
         home: new MyHomePage());
   }
 }
