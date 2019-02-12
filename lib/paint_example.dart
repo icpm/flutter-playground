@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-
 class PaintApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -29,7 +28,7 @@ class _HomePageState extends State<HomePage> {
             setState(() {
               RenderBox object = context.findRenderObject();
               Offset _localPosition =
-              object.globalToLocal(details.globalPosition);
+                  object.globalToLocal(details.globalPosition);
               _points = new List.from(_points)..add(_localPosition);
             });
           },

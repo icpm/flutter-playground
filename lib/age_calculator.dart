@@ -38,10 +38,11 @@ class _MyHomePageState extends State<MyHomePage>
 
   void _showPicker() {
     showDatePicker(
-        context: context,
-        firstDate: new DateTime(1900),
-        initialDate: new DateTime(2018),
-        lastDate: DateTime.now()).then((DateTime dt) {
+            context: context,
+            firstDate: new DateTime(1900),
+            initialDate: new DateTime(2018),
+            lastDate: DateTime.now())
+        .then((DateTime dt) {
       selectedYear = dt.year;
       calculateAge();
     });
@@ -81,14 +82,13 @@ class _MyHomePageState extends State<MyHomePage>
             ),
             new AnimatedBuilder(
               animation: animation,
-              builder: (context, child) =>
-              new Text(
-                "Your Age is ${animation.value.toStringAsFixed(0)}",
-                style: new TextStyle(
-                    fontSize: 30.0,
-                    fontWeight: FontWeight.bold,
-                    fontStyle: FontStyle.italic),
-              ),
+              builder: (context, child) => new Text(
+                    "Your Age is ${animation.value.toStringAsFixed(0)}",
+                    style: new TextStyle(
+                        fontSize: 30.0,
+                        fontWeight: FontWeight.bold,
+                        fontStyle: FontStyle.italic),
+                  ),
             )
           ],
         ),
