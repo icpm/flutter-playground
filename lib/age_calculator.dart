@@ -6,16 +6,16 @@ class AgeCalculator extends StatelessWidget {
     return new MaterialApp(
         debugShowCheckedModeBanner: false,
         theme: new ThemeData(primarySwatch: Colors.green),
-        home: new MyHomePage());
+        home: MyAgePage());
   }
 }
 
-class MyHomePage extends StatefulWidget {
+class MyAgePage extends StatefulWidget {
   @override
-  _MyHomePageState createState() => new _MyHomePageState();
+  _MyAgePageState createState() => new _MyAgePageState();
 }
 
-class _MyHomePageState extends State<MyHomePage>
+class _MyAgePageState extends State<MyAgePage>
     with SingleTickerProviderStateMixin {
   double age = 0.0;
   var selectedYear;
@@ -40,7 +40,7 @@ class _MyHomePageState extends State<MyHomePage>
     showDatePicker(
             context: context,
             firstDate: new DateTime(1900),
-            initialDate: new DateTime(2018),
+            initialDate: new DateTime(2019),
             lastDate: DateTime.now())
         .then((DateTime dt) {
       selectedYear = dt.year;
@@ -50,7 +50,7 @@ class _MyHomePageState extends State<MyHomePage>
 
   void calculateAge() {
     setState(() {
-      age = (2018 - selectedYear).toDouble();
+      age = (2019 - selectedYear).toDouble();
       animation = new Tween<double>(begin: animation.value, end: age).animate(
           new CurvedAnimation(
               curve: Curves.fastOutSlowIn, parent: animationController));
@@ -92,6 +92,10 @@ class _MyHomePageState extends State<MyHomePage>
             )
           ],
         ),
+      ),
+      floatingActionButton: new FloatingActionButton(
+        child: new Icon(Icons.assignment_return),
+        onPressed: () => Navigator.of(context).pop(),
       ),
     );
   }

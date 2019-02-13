@@ -3,20 +3,19 @@ import 'package:flutter/material.dart';
 class PaintApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return new MaterialApp(
-      home: new HomePage(),
+      home: PaintPage(),
       debugShowCheckedModeBanner: false,
     );
   }
 }
 
-class HomePage extends StatefulWidget {
+class PaintPage extends StatefulWidget {
   @override
-  _HomePageState createState() => new _HomePageState();
+  _PaintPageState createState() => new _PaintPageState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _PaintPageState extends State<PaintPage> {
   List<Offset> _points = <Offset>[];
 
   @override
@@ -39,9 +38,24 @@ class _HomePageState extends State<HomePage> {
           ),
         ),
       ),
-      floatingActionButton: new FloatingActionButton(
-        child: new Icon(Icons.clear),
-        onPressed: () => _points.clear(),
+      floatingActionButton: Column(
+        crossAxisAlignment: CrossAxisAlignment.end,
+        mainAxisAlignment: MainAxisAlignment.end,
+        children: <Widget>[
+          FloatingActionButton(
+            heroTag: null,
+            child: new Icon(Icons.clear),
+            onPressed: () => _points.clear(),
+          ),
+          FloatingActionButton(
+            heroTag: null,
+            child: Icon(
+              Icons.assignment_return,
+              color: Colors.white,
+            ),
+            onPressed: () => Navigator.of(context).pop(),
+          ),
+        ],
       ),
     );
   }

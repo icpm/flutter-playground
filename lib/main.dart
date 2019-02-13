@@ -23,13 +23,13 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return new MaterialApp(
       theme: new ThemeData(primarySwatch: GatechThemeColor),
-      home: new LandingPage(),
+      home: new HomePage(),
       debugShowCheckedModeBanner: false,
     );
   }
 }
 
-class LandingPage extends StatelessWidget {
+class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
@@ -53,7 +53,11 @@ class LandingPage extends StatelessWidget {
                       textColor: Colors.white,
                       child: new Text('Age Calcuclator'),
                       onPressed: () {
-                        runApp(AgeCalculator());
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => AgeCalculator()),
+                        );
                       },
                     ),
                     new Padding(
@@ -66,7 +70,11 @@ class LandingPage extends StatelessWidget {
                       textColor: Colors.white,
                       child: new Text('Painiting'),
                       onPressed: () {
-                        runApp(PaintApp());
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => PaintApp()),
+                        );
                       },
                     ),
                     new Padding(
@@ -79,7 +87,11 @@ class LandingPage extends StatelessWidget {
                       textColor: Colors.white,
                       child: new Text('List example'),
                       onPressed: () {
-                        runApp(ListExample());
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => ListExample()),
+                        );
                       },
                     )
                   ],

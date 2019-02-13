@@ -12,6 +12,10 @@ class ListExample extends StatelessWidget {
           child: new Text('My First Flutter APP'),
         )),
         body: new HomeWidget(),
+        floatingActionButton: new FloatingActionButton(
+          child: new Icon(Icons.assignment_return),
+          onPressed: () => Navigator.of(context).pop(),
+        ),
       ),
     );
   }
